@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 ################################################################################
-# Author	:	Erik Dubois					       #
-# Modicificacão :       Rodrigo Alan M. Carvalho			       #
+# Author	    :	    Erik Dubois					                           #
+# Modicificacão :       Rodrigo Alan M. Carvalho			                   #
 ################################################################################
 
 echo "Instalando o  Kernel Zen."
