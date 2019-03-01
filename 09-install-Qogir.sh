@@ -2,14 +2,15 @@
 set -e
 ################################################################################
 # Author	:	Erik Dubois					       #
-# Modicificacão :       Rodrigo Alan M. Carvalho			       #
+# Modificacão :     	Rodrigo Alan M. Carvalho			       #
 ################################################################################
 
 
-echo "Habilitando ntfs."
+echo "Instalando Temas."
 
-sudo pacman -S --noconfirm --needed ntfs-3g
-
+git clone https://github.com/vinceliuice/Qogir-theme.git
+cd Qogir-theme
+./Install -s
 echo "###############################################################"
 echo "####                     Reiniciar                         ####"
 echo "###############################################################"
