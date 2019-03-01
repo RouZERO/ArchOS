@@ -22,6 +22,7 @@ sudo pacman -S gdm --noconfirm --needed
 sudo pacman -S intel-ucode --noconfirm --needed
 sudo pacman -S baobab --noconfirm --needed
 sudo pacman -S file-roller --noconfirm --needed
+sudo pacman -S tilix --noconfirm --needed
 
 
 sudo systemctl enable gdm
