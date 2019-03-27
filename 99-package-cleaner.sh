@@ -10,6 +10,4 @@ echo "Limpeza de Pacotes."
 
 sudo pacman -Rns $(pacman -Qtdq)
 
-echo "###############################################################"
-echo "####                     Reiniciar                         ####"
-echo "###############################################################"
+echo "Limpeza Completa"
