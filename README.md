@@ -1,6 +1,6 @@
-# ArchOS
+# ArchOS UEFI
 
-# Perparando o disco
+# PERPARANDO O DISCO
 
 ```
 fdisk -l
@@ -12,7 +12,7 @@ SDA1  	 		 =    512MB   		 = EFI
 SDA2   			 =    4GB   		 = SWAP
 SDA3    		 =    RESTANTE   	 = Sistema
 ```
-# Configurando o Sistema de arquivo
+# CONFIGURANDO O FORMATO DAS PARTIÇÕES
 
 Transformar Partição em FAT32
 ```
@@ -30,7 +30,7 @@ Ligar Partição de SWAP
 ```
 swapon /dev/sda2
 ```
-# INSTALAR S.O
+# INSTALANDO BASE DO S.O
 
 ```
 mount /dev/sda3 /mnt
@@ -39,17 +39,19 @@ mount /dev/sda3 /mnt
 pacstrap /mnt base base-devel
 ```
 
--	CONFIGURANDO FSTAB  CHROOT /MNT
+# CONFIGURANDO FSTAB  
+```
+genfstab -U -p /mnt >> /mnt/etc/fstab
+```
+```
+arch-chroot /mnt /bin/bash
+```
+#CONFIGURANDO LINGUAGEM E LOCALIZAÇÃO
 
-# genfstab -U -p /mnt >> /mnt/etc/fstab
-# arch-chroot /mnt /bin/bash
-
--	CONFIGURANDO LINGUAGEM E LOCALIZAÇÃO
-
-# nano /etc/locale.gen
-Descomentar pt_BR UTF-8 UTF-8
-		
-
+```
+nano /etc/locale.gen - Descomentar pt_BR UTF-8 UTF-8
+```		
+```
 # echo LANG=pt_BR.UTF-8 > /etc/locale.conf
 # locale-gen
 # export LANG=pt_BR.UTF-8
