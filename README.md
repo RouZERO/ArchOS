@@ -13,16 +13,25 @@ SDA2   			 =    4GB   		 = SWAP
 SDA3    		 =    RESTANTE   	 = Sistema
 ```
 # FORMAT THE FILESYSTEM
-```
-#mkfs.fat -F32 /dev/sda1
-#mkfs.ext4 /dev/sda3
-#mkswap /dev/sda2
-#swapon /dev/sda2
-```
--	MONTAR E INSTALAR
 
-# mount /dev/sda3 /mnt
-# pacstrap /mnt base base-devel
+```
+mkfs.fat -F32 /dev/sda1
+```
+mkfs.ext4 /dev/sda3
+```
+mkswap /dev/sda2
+```
+```
+swapon /dev/sda2
+```
+# MONTAR E INSTALAR
+
+```
+mount /dev/sda3 /mnt
+```
+```
+pacstrap /mnt base base-devel
+```
 
 -	CONFIGURANDO FSTAB  CHROOT /MNT
 
