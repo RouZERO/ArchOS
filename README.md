@@ -1,6 +1,6 @@
 # ArchOS
 
-#CRIANDO PARTIÇÃO
+# CRIANDO PARTIÇÃO
 
 ```
 fdisk -l
@@ -12,16 +12,13 @@ SDA1  	 		 =    512MB   		 = EFI
 SDA2   			 =    4GB   		 = SWAP
 SDA3    		 =    RESTANTE   	 = Sistema
 ```
--	FORMAT THE FILESYSTEM
-
-# mkfs.fat -F32 /dev/sda1
-# mkfs.ext4 /dev/sda3
-
--	LIGAR SWAP
-
-# mkswap /dev/sda2
-# swapon /dev/sda2
-
+# FORMAT THE FILESYSTEM
+```
+#mkfs.fat -F32 /dev/sda1
+#mkfs.ext4 /dev/sda3
+#mkswap /dev/sda2
+#swapon /dev/sda2
+```
 -	MONTAR E INSTALAR
 
 # mount /dev/sda3 /mnt
