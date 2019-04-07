@@ -1,15 +1,15 @@
 # ArchOS
 
--	CRIANDO PARTIÇÃO
-
-# fdisk -l
-# cfdisk /dev/sda
+	CRIANDO PARTIÇÃO
+```
+fdisk -l
+cfdisk /dev/sda
 Escolher GPT
 
 SDA1  	 		 =    512MB   		 = EFI
-SDA2   		 =    4GB   		 = SWAP
+SDA2   			 =    4GB   		 = SWAP
 SDA3    		 =    RESTANTE   	 = Sistema
-
+```
 -	FORMAT THE FILESYSTEM
 
 # mkfs.fat -F32 /dev/sda1
