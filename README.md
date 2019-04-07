@@ -17,7 +17,9 @@ SDA3    		 =    RESTANTE   	 = Sistema
 ```
 mkfs.fat -F32 /dev/sda1
 ```
+```
 mkfs.ext4 /dev/sda3
+```
 ```
 mkswap /dev/sda2
 ```
