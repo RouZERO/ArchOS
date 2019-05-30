@@ -37,6 +37,9 @@ swapon /dev/sda2
 
 2. SWAP em Arquivo
 ```
+mount /dev/sda3 /mnt
+```
+```
 fallocate -l 4GB /swapfile
 ```
 ```
@@ -49,10 +52,6 @@ mkswap /swapfile
 swapon /swapfile
 ```
 #### INSTALANDO ARQUIVOS BASE
-
-```
-mount /dev/sda3 /mnt
-```
 ```
 pacstrap /mnt base base-devel
 ```
