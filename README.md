@@ -51,8 +51,9 @@ pacstrap /mnt base base-devel
 ```
 genfstab -U -p /mnt >> /mnt/etc/fstab
 ```
+### ENTRADO NO SISTEMA COMO ADMINISTRADOR 
 ```
-arch-chroot /mnt /bin/bash
+arch-chroot /mnt
 ```
 ### CONFIGURANDO LINGUAGEM
 Configurando o Arquvo Locale.gen
@@ -83,7 +84,7 @@ ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc
 ```
 
-### ESCOLHENDO O NOME DA MAQUINA E CONFIGURANDO 
+### CONFIGURANDO A REDE
 ```
 echo NOMEDAMAQUINA > /etc/hostname
 ```
@@ -91,10 +92,21 @@ echo NOMEDAMAQUINA > /etc/hostname
 nano /etc/hosts
 ```
 ```
+
 127.0.1.1 NOMEDAMAQUINA.localdomain NOMEDAMAQUINA
 ```
+### CONFIGURANDO O RAID
+```
+nano /etc/mkinitcpio.conf
+```
+```
+Edit the HOOKS line to include mdadm_udev right before the filesystems entry
+```
+```
+mkinitcpio -p linux
+```
 
-### INTERNET
+### CONFIGURANDO A INTERNET
 ```
 pacman -S wireless_tools wpa_supplicant wpa_actiond dialog networkmanager
 ```
@@ -105,6 +117,9 @@ systemctl enable NetworkManager
 ```
 passwd
 ```
+
+# POS INSTALAÇÃO
+
 ### ADICIONANDO NOVO USUÁRIO
 ```
 useradd -m -g users -G storage,power,wheel,audio,video -s /bin/bash NOVOUSUARIO
@@ -129,18 +144,6 @@ nano /etc/sudoers
 ```
 seuusuário   ALL=(ALL) ALL
 ```
-
-### RAID
-```
-nano /etc/mkinitcpio.conf
-```
-```
-Edit the HOOKS line to include mdadm_udev right before the filesystems entry
-```
-```
-mkinitcpio -p linux
-```
-
 ### INSTALL AND CONFIGURE BOOTLOADER
 ```
 pacman -S grub efibootmgr
