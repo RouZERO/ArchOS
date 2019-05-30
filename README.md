@@ -93,14 +93,14 @@ pacman -S wireless_tools wpa_supplicant wpa_actiond dialog networkmanager
 ```
 systemctl enable NetworkManager
 ```
-# SET ROOT PASSWORD
+# COLOCANDO SENHA PARA O ADMINISTRADOR
 ```
 passwd
 ```
-# ADICIONANDO USUÁRIO
+# ADICIONANDO NOVO USUÁRIO
 ```
-useradd -m -g users -G storage,power,wheel,audio,video -s /bin/bash "username"
-passwd "username"
+useradd -m -g users -G storage,power,wheel,audio,video -s /bin/bash NOVOUSUARIO
+passwd NOVOUSUARIO
 ```
 # PACOTES 32 bits pacman
 ```
