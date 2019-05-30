@@ -4,7 +4,11 @@
 
 ```
 fdisk -l
+```
+```
 cfdisk /dev/sda
+```
+```
 Escolher GPT
 ```
 
