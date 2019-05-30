@@ -7,11 +7,14 @@ fdisk -l
 cfdisk /dev/sda
 Escolher GPT
 ```
-```
-SDA1  	 		 =    512MB   		 = EFI
-SDA2   			 =    4GB   		 = SWAP
-SDA3    		 =    RESTANTE   	 = Sistema
-```
+
+|PARTIÇÃO	|TAMANHO  	|TIPO   	|
+|------	|----------	|---------	|
+| sdX1 	| 512MB    	| EFI     	|
+| sdX2 	| 4GB      	| SWAP     	|
+| sdx3 	| Restante 	| SISTEMA 	|
+
+
 ### CONFIGURANDO O FORMATO DAS PARTIÇÕES
 
 Transformar Partição em FAT32
