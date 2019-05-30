@@ -67,65 +67,96 @@ Exportando a Configuração
 ```
 export LANG=pt_BR.UTF-8
 ```
-
--	SET YOUR TIME ZONE
-
+# CONFIGURANDO O FUSO HORÁRIO
+```
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+```
+```
 hwclock --systohc
+```
 
-
-
-# SET HOSTNAME & NETWORK
-
-echo arch > /etc/hostname
-
+# ESCOLHENDO O NOME DA MAQUINA E CONFIGURANDO 
+```
+echo NOMEDAMAQUINA > /etc/hostname
+```
+```
 nano /etc/hosts
-127.0.1.1 arch.localdomain arch
+```
+```
+127.0.1.1 NOMEDAMAQUINA.localdomain NOMEDAMAQUINA
+```
 
 # INTERNET
-
+```
 pacman -S wireless_tools wpa_supplicant wpa_actiond dialog networkmanager
-
+```
+```
 systemctl enable NetworkManager
-
+```
 # SET ROOT PASSWORD
-
+```
 passwd
-
+```
 # ADICIONANDO USUÁRIO
-
+```
 useradd -m -g users -G storage,power,wheel,audio,video -s /bin/bash "username"
 passwd "username"
-
+```
 # PACOTES 32 bits pacman
-
+```
 nano /etc/pacman.conf
-Descomentar   	 [multilib]
-pacman -Sy   		 
+```
+Descomentar
+```
+[multilib]
+```
+```
+pacman -Sy
+```
 
 # HABILITANDO SUDO
-
+```
 nano /etc/sudoers
+```
+```
 seuusuário   ALL=(ALL) ALL
+```
 
 # RAID
-
+```
 nano /etc/mkinitcpio.conf
+```
+```
 Edit the HOOKS line to include mdadm_udev right before the filesystems entry
+```
+```
 mkinitcpio -p linux
+```
 
 # INSTALL AND CONFIGURE BOOTLOADER
-
+```
 pacman -S grub efibootmgr
-
+```
+```
 mkdir /boot/efi
+```
+```
 mount /dev/sda1 /boot/efi
-
+```
+```
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi --recheck
+```
+```
 grub-mkconfig -o /boot/grub/grub.cfg
+```
 
-# UNMOUNT THE PARTITIONS AND REBOOT
-
+# DESMONTE AS PARTIÇÕES E REINICIE
+```
 exit
+```
+```
 umount -R /mnt
+```
+```
 reboot
+```
