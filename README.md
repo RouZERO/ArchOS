@@ -13,8 +13,7 @@ Escolher GPT
 ```
 ```
 EFI        = sdX1      = 512MB 
-SWAP       = sdX2      = 4GB
-SISTEMA    = sdx3      = Restante
+SISTEMA    = sdx2      = Restante
 ```
 #### CONFIGURANDO O FORMATO DAS PARTIÇÕES
 
@@ -24,21 +23,12 @@ mkfs.fat -F32 /dev/sda1
 ```
 Transformar Partição em EXT4
 ```
-mkfs.ext4 /dev/sda3
+mkfs.ext4 /dev/sda2
 ```
-#### CONFIGURANDO SWAP
-1. SWAP Em Partição
-```
-mkswap /dev/sda2
-```
-```
-swapon /dev/sda2
-```
-
-2. SWAP em Arquivo
 ```
 mount /dev/sda3 /mnt
 ```
+#### CONFIGURANDO ARQUIVO DE SWAP
 ```
 fallocate -l 4GB /swapfile
 ```
