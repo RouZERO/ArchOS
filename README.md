@@ -47,10 +47,14 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 arch-chroot /mnt /bin/bash
 ```
 # CONFIGURANDO LINGUAGEM E LOCALIZAÇÃO
-
+Alterando a Localização
 ```
-nano /etc/locale.gen - Descomentar pt_BR UTF-8 UTF-8
-```		
+nano /etc/locale.gen
+```
+Descomentar
+```
+pt_BR UTF-8 UTF-8
+```
 # echo LANG=pt_BR.UTF-8 > /etc/locale.conf
 # locale-gen
 # export LANG=pt_BR.UTF-8
