@@ -108,6 +108,12 @@ pacman -Sy
 nano /etc/sudoers
 seuusuário   ALL=(ALL) ALL
 
+# RAID
+
+nano /etc/mkinitcpio.conf
+Edit the HOOKS line to include mdadm_udev right before the filesystems entry
+mkinitcpio -p linux
+
 # INSTALL AND CONFIGURE BOOTLOADER
 
 pacman -S grub efibootmgr
@@ -118,24 +124,8 @@ mount /dev/sda1 /boot/efi
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 
-# RAID
-
-nano /etc/mkinitcpio.conf
-Edit the HOOKS line to include mdadm_udev right before the filesystems entry
-mkinitcpio -p linux
-
-
 # UNMOUNT THE PARTITIONS AND REBOOT
 
 exit
 umount -R /mnt
 reboot
-
-# INSTALANDO MODO GRÁFICO DO SISTEMA
-
-pacman -S xorg xorg-xinit xorg-server gnome-shell nautilus gnome-terminal gnome-tweak-tool gnome-control-center gnome-disk-utility gedit evince xdg-user-dirs gdm intel-ucode baobab file-roller gnome-keyring
-
-
-systemctl enable gdm
-
-Reboot
