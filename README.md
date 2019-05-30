@@ -26,7 +26,7 @@ Transformar Partição em EXT4
 ```
 mkfs.ext4 /dev/sda3
 ```
-Criar Partição de SWAP
+#### CONFIGURANDO SWAP
 1. SWAP Em Partição
 ```
 mkswap /dev/sda2
