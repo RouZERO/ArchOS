@@ -18,15 +18,12 @@ sudo pacman -S nautilus --noconfirm --needed
 sudo pacman -S gedit --noconfirm --needed
 sudo pacman -S gdm --noconfirm --needed
 
-sudo pacman -S evince --noconfirm --needed
 sudo pacman -S xdg-user-dirs --noconfirm --needed
 
 sudo pacman -S intel-ucode --noconfirm --needed
 sudo pacman -S baobab --noconfirm --needed
 sudo pacman -S file-roller --noconfirm --needed
 sudo pacman -S tilix --noconfirm --needed
-sudo pacman -S flashplugin --noconfirm --needed
-
 
 sudo systemctl enable gdm
 
