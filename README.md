@@ -51,7 +51,7 @@ mkswap /swapfile
 ```
 swapon /swapfile
 ```
-#### INSTALANDO ARQUIVOS BASE
+#### INSTALANDO ARQUIVOS BÁSICOS
 ```
 pacstrap /mnt base base-devel
 ```
@@ -118,7 +118,7 @@ mkinitcpio -p linux
 
 #### CONFIGURANDO A INTERNET
 ```
-pacman -S wireless_tools wpa_supplicant wpa_actiond dialog networkmanager
+pacman -S wireless_tools networkmanager
 ```
 ```
 systemctl enable NetworkManager
@@ -128,7 +128,7 @@ systemctl enable NetworkManager
 passwd
 ```
 
-# POS INSTALAÇÃO
+# APOS INSTALAÇÃO DOS ARQUIVOS BÁSICO
 
 #### ADICIONANDO NOVO USUÁRIO
 ```
