@@ -38,6 +38,7 @@ mount /dev/sda3 /mnt
 ```
 pacstrap /mnt base base-devel
 ```
+## CONFIGURANDO O SISTEMA
 
 # CONFIGURANDO FSTAB  
 ```
