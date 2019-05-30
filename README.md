@@ -27,12 +27,26 @@ Transformar Partição em EXT4
 mkfs.ext4 /dev/sda3
 ```
 Criar Partição de SWAP
+1. SWAP Em Partição
 ```
 mkswap /dev/sda2
 ```
-Ligar Partição de SWAP
 ```
 swapon /dev/sda2
+```
+
+2. SWAP em Arquivo
+```
+fallocate -l 4GB /swapfile
+```
+```
+chmod 600 /swapfile
+```
+```
+mkswap /swapfile
+```
+```
+swapon /swapfile
 ```
 #### INSTALANDO ARQUIVOS BASE
 
