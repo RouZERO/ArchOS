@@ -1,6 +1,6 @@
 # ArchOS UEFI
 
-#### 1.PERPARANDO O DISCO
+#### 1. PERPARANDO O DISCO
 ```
 fdisk -l
 ```
@@ -14,7 +14,7 @@ Escolher GPT
 EFI        = sdX1      = 512MB 
 SISTEMA    = sdx2      = Restante
 ```
-#### 2.CONFIGURANDO O FORMATO DAS PARTIÇÕES
+#### 2. CONFIGURANDO O FORMATO DAS PARTIÇÕES
 
 Transformar Partição em FAT32
 ```
@@ -27,7 +27,7 @@ mkfs.ext4 /dev/sda2
 ```
 mount /dev/sda3 /mnt
 ```
-#### CONFIGURANDO ARQUIVO DE SWAP
+#### 3. CONFIGURANDO ARQUIVO DE SWAP
 ```
 fallocate -l 4GB /mnt/swapfile
 ```
@@ -40,21 +40,21 @@ mkswap /mnt/swapfile
 ```
 swapon /mnt/swapfile
 ```
-#### INSTALANDO ARQUIVOS BÁSICOS
+#### 4. INSTALANDO ARQUIVOS BÁSICOS
 ```
 pacstrap /mnt base base-devel
 ```
 # CONFIGURANDO O SISTEMA
 
-#### CONFIGURANDO FSTAB  
+#### 5. CONFIGURANDO FSTAB  
 ```
 genfstab -U -p /mnt >> /mnt/etc/fstab
 ```
-#### ENTRADO NO SISTEMA COMO ADMINISTRADOR 
+#### 6. ENTRADO NO SISTEMA COMO ADMINISTRADOR 
 ```
 arch-chroot /mnt
 ```
-#### CONFIGURANDO LINGUAGEM
+#### 7. CONFIGURANDO LINGUAGEM
 Configurando o Arquvo Locale.gen
 ```
 nano /etc/locale.gen
@@ -75,7 +75,7 @@ Exportando a Configuração
 ```
 export LANG=pt_BR.UTF-8
 ```
-#### CONFIGURANDO O FUSO HORÁRIO
+#### 8. CONFIGURANDO O FUSO HORÁRIO
 ```
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 ```
@@ -83,7 +83,7 @@ ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc
 ```
 
-#### CONFIGURANDO A REDE
+#### 9. CONFIGURANDO A REDE
 ```
 echo NOMEDAMAQUINA > /etc/hostname
 ```
@@ -94,7 +94,7 @@ nano /etc/hosts
 
 127.0.1.1 NOMEDAMAQUINA.localdomain NOMEDAMAQUINA
 ```
-#### CONFIGURANDO O RAID
+#### 10. CONFIGURANDO O RAID
 ```
 nano /etc/mkinitcpio.conf
 ```
@@ -105,14 +105,14 @@ Edit the HOOKS line to include mdadm_udev right before the filesystems entry
 mkinitcpio -p linux
 ```
 
-#### CONFIGURANDO A INTERNET
+#### 11. CONFIGURANDO A INTERNET
 ```
 pacman -S wireless_tools networkmanager
 ```
 ```
 systemctl enable NetworkManager
 ```
-#### COLOCANDO SENHA PARA O ADMINISTRADOR
+#### 12. COLOCANDO SENHA PARA O ADMINISTRADOR
 ```
 passwd
 ```
