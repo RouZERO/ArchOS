@@ -99,7 +99,7 @@ echo -e ¨127.0.0.1 localhost.localdomain localhost \n::1 localhost.localdomain 
 nano /etc/mkinitcpio.conf
 ```
 ```
-Edit the HOOKS line to include mdadm_udev right before the filesystems entry
+Colocar em HOOKS o comando mdadm_udev antes do comando filesystems 
 ```
 ```
 mkinitcpio -p linux
