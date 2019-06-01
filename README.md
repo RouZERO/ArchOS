@@ -7,9 +7,7 @@ fdisk -l
 ```
 cfdisk /dev/sda
 ```
-```
-Escolher GPT
-```
+Escolher GPT Seguir Tabela Abaixo
 ```
 EFI        = sdX1      = 512MB 
 SISTEMA    = sdx2      = Restante
