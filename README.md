@@ -1,7 +1,6 @@
 # ArchOS UEFI
 
-#### PERPARANDO O DISCO
-
+#### 1.PERPARANDO O DISCO
 ```
 fdisk -l
 ```
@@ -15,7 +14,7 @@ Escolher GPT
 EFI        = sdX1      = 512MB 
 SISTEMA    = sdx2      = Restante
 ```
-#### CONFIGURANDO O FORMATO DAS PARTIÇÕES
+#### 2.CONFIGURANDO O FORMATO DAS PARTIÇÕES
 
 Transformar Partição em FAT32
 ```
@@ -30,16 +29,16 @@ mount /dev/sda3 /mnt
 ```
 #### CONFIGURANDO ARQUIVO DE SWAP
 ```
-fallocate -l 4GB /swapfile
+fallocate -l 4GB /mnt/swapfile
 ```
 ```
-chmod 600 /swapfile
+chmod 600 /mnt/swapfile
 ```
 ```
-mkswap /swapfile
+mkswap /mnt/swapfile
 ```
 ```
-swapon /swapfile
+swapon /mnt/swapfile
 ```
 #### INSTALANDO ARQUIVOS BÁSICOS
 ```
