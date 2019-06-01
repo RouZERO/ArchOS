@@ -44,7 +44,7 @@ arch-chroot /mnt
 ```
 #### 6. CONFIGURANDO ARQUIVO DE SWAP
 ```
-fallocate -l 4GB /swapfile
+fallocate -l 4G /swapfile
 ```
 ```
 chmod 600 /swapfile
