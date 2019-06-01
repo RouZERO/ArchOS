@@ -44,16 +44,16 @@ arch-chroot /mnt
 ```
 #### 6. CONFIGURANDO ARQUIVO DE SWAP
 ```
-fallocate -l 4GB /mnt/swapfile
+fallocate -l 4GB /swapfile
 ```
 ```
-chmod 600 /mnt/swapfile
+chmod 600 /swapfile
 ```
 ```
-mkswap /mnt/swapfile
+mkswap /swapfile
 ```
 ```
-swapon /mnt/swapfile
+swapon /swapfile
 ```
 #### 7. CONFIGURANDO LINGUAGEM
 Configurando o Arquvo Locale.gen
