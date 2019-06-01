@@ -7,8 +7,7 @@ set -e
 
 echo "Instalando o  Kernel Zen."
 
-sudo pacman -S --noconfirm --needed linux-zen linux-zen-headers
-sudo pacman -S --noconfirm --needed linux-zen-headers
+sudo pacman -S linux-zen linux-zen-headers --noconfirm --needed 
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "###############################################################"
