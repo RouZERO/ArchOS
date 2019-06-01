@@ -1,0 +1,35 @@
+baobab 3.32.0-1
+
+blender-2.8-git 2.8.r87614.40a69b2ad7f-1
+
+gdm 3.32.0+2+g820f90f5-1
+github-desktop 1.6.6-2
+
+tilix 1.9.3-1
+ufw 0.36-1
+gamemode-git r433.f572728-1
+
+
+lutris 0.5.2.1-2
+mono 5.20.1.19-1
+multimc5 0.6.5-1
+qemu 4.0.0-2
+
+steam 1.0.0.61-1
+steam-native-runtime 1.0.0.56-3
+
+
+wine-mono 4.8.3-1
+wine-staging 4.9-1
+wine_gecko 2.47-2
+winetricks 20190310-1
+
+xboxdrv 0.8.8-4
+
+zsh 5.7.1-1
+zsh-completions 0.30.0-1
+
+temas flatpak /var/lib/flatpak/runtime/
+
+flatpak install flathub org.gnome.eog
+

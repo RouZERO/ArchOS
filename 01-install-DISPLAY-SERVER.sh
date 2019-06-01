@@ -5,9 +5,8 @@ set -e
 # Modicificacão :       Rodrigo Alan M. Carvalho			       #
 ################################################################################
 
-sudo pacman -S xorg --noconfirm --needed
-sudo pacman -S xorg-xinit --noconfirm --needed
 sudo pacman -S xorg-server --noconfirm --needed
+sudo pacman -S xorg-xinit --noconfirm --needed
 sudo pacman -S xdg-user-dirs --noconfirm --needed
 sudo pacman -S intel-ucode --noconfirm --needed
 
