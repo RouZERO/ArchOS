@@ -10,11 +10,11 @@ echo "################################################################"
 echo "####        Intalando Fontes, Icones e Temas                ####"
 echo "################################################################"
 
-[ -d $HOME"/.fonts" ] || mkdir -p $HOME"/.fonts"
+#[ -d $HOME"/.fonts" ] || mkdir -p $HOME"/.fonts"
 [ -d $HOME"/.icons" ] || mkdir -p $HOME"/.icons"
 [ -d $HOME"/.themes" ] || mkdir -p $HOME"/.themes"
 
-cp -R APPARENCE/fonts/* ~/.fonts/
+#cp -R APPARENCE/fonts/* ~/.fonts/
 cp -R APPARENCE/icons/* ~/.icons/
 cp -R APPARENCE/themes/* ~/.themes/
 
