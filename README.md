@@ -116,9 +116,6 @@ systemctl enable NetworkManager
 ```
 passwd
 ```
-
-# APOS INSTALAÇÃO DOS ARQUIVOS BÁSICO
-
 #### ADICIONANDO NOVO USUÁRIO
 ```
 useradd -m -g users -G storage,power,wheel,audio,video -s /bin/bash NOVOUSUARIO
