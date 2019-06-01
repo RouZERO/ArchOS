@@ -92,7 +92,7 @@ nano /etc/hosts
 ```
 ```
 
-127.0.1.1 NOMEDAMAQUINA.localdomain NOMEDAMAQUINA
+echo -e ¨127.0.0.1 localhost.localdomain localhost \n::1 localhost.localdomain localhost \n127.0.1.1 NOMEDAMAQUINA.localdomain NOMEDAMAQUINA¨ > /etc/hosts
 ```
 #### 10. CONFIGURANDO O RAID
 ```
