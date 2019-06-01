@@ -1,22 +1,12 @@
 #!/bin/bash
 set -e
-################################################################################
-# Author	:	Erik Dubois					       #
-# Modicificacão :       Rodrigo Alan M. Carvalho			       #
-################################################################################
+# Author	:	Erik Dubois
+# Modicificacão :       Rodrigo Alan M. Carvalho
 
-sudo pacman -S gnome-shell --noconfirm --needed
-sudo pacman -S gnome-tweak-tool --noconfirm --needed
-sudo pacman -S gnome-control-center --noconfirm --needed
-sudo pacman -S gnome-keyring --noconfirm --needed
-sudo pacman -S nautilus --noconfirm --needed
-sudo pacman -S gdm --noconfirm --needed
-sudo pacman -S tilix --noconfirm --needed
-sudo pacman -S chrome-gnome-shell --noconfirm --needed
+
+sudo pacman -S gnome-shell gnome-tweak-tool gnome-control-center gnome-keyring nautilus gdm tilix chrome-gnome-shell --noconfirm --needed
 sudo systemctl enable gdm
 
 
+echo ">> You got to reboot.<<"
 
-echo "#########################################################################"
-echo "##############           You got to reboot.                 #############"
-echo "#########################################################################"
