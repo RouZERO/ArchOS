@@ -27,7 +27,22 @@ mkfs.ext4 /dev/sda2
 ```
 mount /dev/sda3 /mnt
 ```
-#### 3. CONFIGURANDO ARQUIVO DE SWAP
+
+#### 3. INSTALANDO ARQUIVOS BÁSICOS
+```
+pacstrap /mnt base base-devel
+```
+# CONFIGURANDO O SISTEMA
+
+#### 4. CONFIGURANDO FSTAB  
+```
+genfstab -U -p /mnt >> /mnt/etc/fstab
+```
+#### 5. ENTRADO NO SISTEMA COMO ADMINISTRADOR 
+```
+arch-chroot /mnt
+```
+#### 6. CONFIGURANDO ARQUIVO DE SWAP
 ```
 fallocate -l 4GB /mnt/swapfile
 ```
@@ -39,20 +54,6 @@ mkswap /mnt/swapfile
 ```
 ```
 swapon /mnt/swapfile
-```
-#### 4. INSTALANDO ARQUIVOS BÁSICOS
-```
-pacstrap /mnt base base-devel
-```
-# CONFIGURANDO O SISTEMA
-
-#### 5. CONFIGURANDO FSTAB  
-```
-genfstab -U -p /mnt >> /mnt/etc/fstab
-```
-#### 6. ENTRADO NO SISTEMA COMO ADMINISTRADOR 
-```
-arch-chroot /mnt
 ```
 #### 7. CONFIGURANDO LINGUAGEM
 Configurando o Arquvo Locale.gen
