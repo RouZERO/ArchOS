@@ -116,12 +116,12 @@ systemctl enable NetworkManager
 ```
 passwd
 ```
-#### ADICIONANDO NOVO USUÁRIO
+#### 13. ADICIONANDO NOVO USUÁRIO
 ```
 useradd -m -g users -G storage,power,wheel,audio,video -s /bin/bash NOVOUSUARIO
 passwd NOVOUSUARIO
 ```
-#### PACOTES 32 bits pacman
+#### 14. PACOTES 32bits
 ```
 nano /etc/pacman.conf
 ```
@@ -133,14 +133,14 @@ Descomentar
 pacman -Sy
 ```
 
-#### HABILITANDO SUDO
+#### 15. HABILITANDO SUDO
 ```
 nano /etc/sudoers
 ```
 ```
 seuusuário   ALL=(ALL) ALL
 ```
-#### INSTALL AND CONFIGURE BOOTLOADER
+#### 16. CONFIGURANDO OS ARQUIVOS DE BOOT
 ```
 pacman -S grub efibootmgr
 ```
