@@ -70,10 +70,6 @@ Finalizando a Configuração da Linguagem
 ```
 locale-gen
 ```
-Exportando a Configuração
-```
-export LANG=pt_BR.UTF-8
-```
 #### 8. CONFIGURANDO O FUSO HORÁRIO
 ```
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
