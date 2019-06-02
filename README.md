@@ -2,7 +2,7 @@
 
 #### 1. PERPARANDO O DISCO
 ```
-fdisk -l
+lsblk
 ```
 ```
 cfdisk /dev/mdX
