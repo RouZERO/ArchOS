@@ -5,25 +5,25 @@
 fdisk -l
 ```
 ```
-cfdisk /dev/sda
+cfdisk /dev/mdX
 ```
 Escolher GPT Seguir Tabela Abaixo
 ```
-EFI        = sdX1      = 512MB 
-SISTEMA    = sdx2      = Restante
+EFI        = mdX1      = 512MB 
+SISTEMA    = mdX2      = Restante
 ```
 #### 2. CONFIGURANDO O FORMATO DAS PARTIÇÕES
 
 Transformar Partição em FAT32
 ```
-mkfs.fat -F32 /dev/sda1
+mkfs.fat -F32 /dev/mdX1
 ```
 Transformar Partição em EXT4
 ```
-mkfs.ext4 /dev/sda2
+mkfs.ext4 /dev/mdX2
 ```
 ```
-mount /dev/sda3 /mnt
+mount /dev/mdX2 /mnt
 ```
 
 #### 3. INSTALANDO ARQUIVOS BÁSICOS
@@ -98,8 +98,8 @@ mdadm --examine --scan > /etc/mdadm.conf
 nano /etc/mkinitcpio.conf
 ```
 ```
-Colocar em HOOKS o comando mdadm_udev antes do comando filesystems
-Colocar em BINARIES o comando mdmon
+Colocar em HOOKS    o comando mdadm_udev antes do comando filesystems
+Colocar em BINARIES o comando /sbin/mdmon
 ```
 ```
 mkinitcpio -p linux
