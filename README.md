@@ -1,17 +1,6 @@
 # ArchOS UEFI + RAID
 
 #### 1. PERPARANDO O DISCO
-
-```
-# mdadm -C /dev/md/imsm --raid-devices=2 --metadata=imsm /dev/sd[ab]
-Continue creating array? y
-mdadm: container /dev/md/imsm prepared.
-```
-```
-# mdadm -C /dev/md/data --raid-devices=2 --level=1 /dev/md/imsm
-mdadm: array /dev/md/data started.
-```
-
 ```
 fdisk -l
 ```
