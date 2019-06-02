@@ -90,6 +90,10 @@ nano /etc/hosts
 echo -e ¨127.0.0.1 localhost.localdomain localhost \n::1 localhost.localdomain localhost \n127.0.1.1 NOMEDAMAQUINA.localdomain NOMEDAMAQUINA¨ > /etc/hosts
 ```
 #### 10. CONFIGURANDO O RAID
+Gerar mdadm.conf
+```
+mdadm --examine --scan > /etc/mdadm.conf
+```
 ```
 nano /etc/mkinitcpio.conf
 ```
