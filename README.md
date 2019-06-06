@@ -1,58 +1,57 @@
-# ArchOS UEFI
+# Arch Linux UEFI + RAID
 
 #### 1. PERPARANDO O DISCO
 ```
-fdisk -l
+lsblk
 ```
 ```
-cfdisk /dev/sda
+cfdisk /dev/mdX
 ```
+Escolher GPT Seguir Tabela Abaixo
 ```
-Escolher GPT
-```
-```
-EFI        = sdX1      = 512MB 
-SISTEMA    = sdx2      = Restante
+EFI        = mdX1      = 512MB 
+SISTEMA    = mdX2      = Restante
 ```
 #### 2. CONFIGURANDO O FORMATO DAS PARTIÇÕES
 
 Transformar Partição em FAT32
 ```
-mkfs.fat -F32 /dev/sda1
+mkfs.fat -F32 /dev/mdX1
 ```
 Transformar Partição em EXT4
 ```
-mkfs.ext4 /dev/sda2
+mkfs.ext4 /dev/mdX2
 ```
 ```
-mount /dev/sda3 /mnt
+mount /dev/mdX2 /mnt
 ```
-#### 3. CONFIGURANDO ARQUIVO DE SWAP
-```
-fallocate -l 4GB /mnt/swapfile
-```
-```
-chmod 600 /mnt/swapfile
-```
-```
-mkswap /mnt/swapfile
-```
-```
-swapon /mnt/swapfile
-```
-#### 4. INSTALANDO ARQUIVOS BÁSICOS
+
+#### 3. INSTALANDO ARQUIVOS BÁSICOS
 ```
 pacstrap /mnt base base-devel
 ```
 # CONFIGURANDO O SISTEMA
 
-#### 5. CONFIGURANDO FSTAB  
+#### 4. CONFIGURANDO FSTAB  
 ```
 genfstab -U -p /mnt >> /mnt/etc/fstab
 ```
-#### 6. ENTRADO NO SISTEMA COMO ADMINISTRADOR 
+#### 5. ENTRADO NO SISTEMA COMO ADMINISTRADOR 
 ```
 arch-chroot /mnt
+```
+#### 6. CONFIGURANDO ARQUIVO DE SWAP
+```
+fallocate -l 4G /swapfile
+```
+```
+chmod 600 /swapfile
+```
+```
+mkswap /swapfile
+```
+```
+swapon /swapfile
 ```
 #### 7. CONFIGURANDO LINGUAGEM
 Configurando o Arquvo Locale.gen
@@ -70,10 +69,6 @@ echo LANG=pt_BR.UTF-8 > /etc/locale.conf
 Finalizando a Configuração da Linguagem
 ```
 locale-gen
-```
-Exportando a Configuração
-```
-export LANG=pt_BR.UTF-8
 ```
 #### 8. CONFIGURANDO O FUSO HORÁRIO
 ```
@@ -95,11 +90,16 @@ nano /etc/hosts
 echo -e ¨127.0.0.1 localhost.localdomain localhost \n::1 localhost.localdomain localhost \n127.0.1.1 NOMEDAMAQUINA.localdomain NOMEDAMAQUINA¨ > /etc/hosts
 ```
 #### 10. CONFIGURANDO O RAID
+Gerar Arquivo /etc/mdadm.conf
+```
+mdadm --examine --scan > /etc/mdadm.conf
+```
 ```
 nano /etc/mkinitcpio.conf
 ```
 ```
-Colocar em HOOKS o comando mdadm_udev antes do comando filesystems 
+Colocar em HOOKS    o comando mdadm_udev antes do comando filesystems
+Colocar em BINARIES o comando /sbin/mdmon
 ```
 ```
 mkinitcpio -p linux
