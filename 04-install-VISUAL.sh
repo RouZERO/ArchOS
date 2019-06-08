@@ -14,13 +14,13 @@ echo "################################################################"
 [ -d $HOME"/.icons" ] || mkdir -p $HOME"/.icons"
 [ -d $HOME"/.themes" ] || mkdir -p $HOME"/.themes"
 
-#cp -R APPARENCE/fonts/* ~/.fonts/
-cp -R APPARENCE/icons/* ~/.icons/
-cp -R APPARENCE/themes/* ~/.themes/
+#cp -R VISUAL/fonts/* ~/.fonts/
+cp -R VISUAL/icons/* ~/.icons/
+cp -R VISIUAL/themes/* ~/.themes/
 
 echo "Building new fonts into the cache files";
 echo "Depending on the number of fonts, this may take a while..."
-fc-cache -fv ~/.fonts
+#fc-cache -fv ~/.fonts
 
 echo "################################################################"
 echo "####     Fonts from Arch Linux repo have been installed     ####"
