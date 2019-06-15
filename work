@@ -1,3 +1,8 @@
+ENTRAR UEFI
+
+systemctl reboot --firmware-setup
+
+
 baobab 3.32.0-1
 
 blender-2.8-git 2.8.r87614.40a69b2ad7f-1
