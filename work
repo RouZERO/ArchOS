@@ -2,6 +2,16 @@ ENTRAR UEFI
 
 systemctl reboot --firmware-setup
 
+ADD STEAM ATIVAR GAMEMODE
+
+gamemoderun %command%
+
+Feedback ao digitar senha
+
+sudo gedit /etc/sudoers
+
+Passo 3. Procure a linha que contém o valor Defaults env_reset e adicione outra linha abaixo dela, com o conteúdo Defaults pwfeedback;
+
 
 baobab 3.32.0-1
 
