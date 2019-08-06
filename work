@@ -12,32 +12,22 @@ sudo gedit /etc/sudoers
 
 Passo 3. Procure a linha que contém o valor Defaults env_reset e adicione outra linha abaixo dela, com o conteúdo Defaults pwfeedback;
 
+Trocar versão do Java
+
+Ver as disponiveis
+archlinux-java status
+
+Setar a escolhida
+
+archlinux-java status XXXXX
 
 baobab 3.32.0-1
 
-blender-2.8-git 2.8.r87614.40a69b2ad7f-1
-
-gdm 3.32.0+2+g820f90f5-1
-github-desktop 1.6.6-2
-
 tilix 1.9.3-1
 ufw 0.36-1
-gamemode-git r433.f572728-1
+gamemode
 
-
-lutris 0.5.2.1-2
-mono 5.20.1.19-1
-multimc5 0.6.5-1
-qemu 4.0.0-2
-
-steam 1.0.0.61-1
-steam-native-runtime 1.0.0.56-3
-
-
-wine-mono 4.8.3-1
-wine-staging 4.9-1
-wine_gecko 2.47-2
-winetricks 20190310-1
+winetricks
 
 xboxdrv 0.8.8-4
 
@@ -74,6 +64,3 @@ System: /var/lib/flatpak/runtime/org.kde.Platform/x86_64/5.11/active/files/share
 
 To install one of your themes, just copy it into the proper folder and restart the app (don't use symlinks - I tried this and my theme was ignored).
 NOTE: this is a temporary fix to hold me over until I figure out how to build Flatpak themes from source, but it definitely works. I've tested it with Evolution 3.30, GIMP 2.10, LibreOffice 6.1.4.2, and Okular. The one thing you'll need to pay attention to is if one of your apps switches to a newer runtime during an upgrade; this seems to affect Gnome-based apps the most.
-
-Feel free to PM me if you have any questions.
-
