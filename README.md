@@ -22,7 +22,7 @@ Transformar Partição em EXT4
 ```
 mkfs.ext4 /dev/sdX2
 ```
-Montar Partição
+Montar Partição Primaria
 ```
 mount /dev/sdX2 /mnt
 ```
