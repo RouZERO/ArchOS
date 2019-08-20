@@ -5,25 +5,26 @@
 lsblk
 ```
 ```
-cfdisk /dev/mdX
+cfdisk /dev/sdX
 ```
 Escolher GPT Seguir Tabela Abaixo
 ```
-EFI        = mdX1      = 512MB 
-SISTEMA    = mdX2      = Restante
+EFI        = sdX1      = 512MB 
+SISTEMA    = sdX2      = Restante
 ```
 #### 2. CONFIGURANDO O FORMATO DAS PARTIÇÕES
 
 Transformar Partição em FAT32
 ```
-mkfs.fat -F32 /dev/mdX1
+mkfs.fat -F32 /dev/sdX1
 ```
 Transformar Partição em EXT4
 ```
-mkfs.ext4 /dev/mdX2
+mkfs.ext4 /dev/sdX2
 ```
+Montar Partição
 ```
-mount /dev/mdX2 /mnt
+mount /dev/sdX2 /mnt
 ```
 
 #### 3. INSTALANDO ARQUIVOS BÁSICOS
