@@ -1,3 +1,10 @@
+Joystck
+xboxdrv
+
+systemctl enable xboxdrv.service
+systemctl start xboxdrv.service
+
+
 ENTRAR UEFI
 
 systemctl reboot --firmware-setup
