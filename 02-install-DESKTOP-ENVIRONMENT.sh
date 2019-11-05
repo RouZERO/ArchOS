@@ -4,7 +4,7 @@ set -e
 # Modicificacão :       Rodrigo Alan M. Carvalho
 
 
-sudo pacman -S gnome-shell gnome-tweak-tool gnome-control-center nautilus gdm tilix chrome-gnome-shell evolution-data-server --noconfirm --needed
+sudo pacman -S gnome-shell gnome-tweak-tool gnome-control-center gnome-keyring nautilus gdm tilix chrome-gnome-shell --noconfirm --needed
 sudo systemctl enable gdm
 
 
