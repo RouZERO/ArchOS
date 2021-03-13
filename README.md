@@ -5,42 +5,48 @@
 lsblk
 ```
 ```
-cfdisk /dev/mdX
+cfdisk /dev/sda
 ```
 Escolher GPT Seguir Tabela Abaixo
 ```
-EFI        = mdX1      = 512MB 
-SISTEMA    = mdX2      = Restante
+EFI        = sda1      = 512M
+SWAP       = sda2      = 2G
+SISTEMA    = sda3      = Restante
 ```
 #### 2. CONFIGURANDO O FORMATO DAS PARTIÇÕES
 
-Transformar Partição em FAT32
+Transformando as Partições
 ```
-mkfs.fat -F32 /dev/mdX1
-```
-Transformar Partição em EXT4
-```
-mkfs.ext4 /dev/mdX2
+mkfs.fat -F32 /dev/sda1
 ```
 ```
-mount /dev/mdX2 /mnt
+mkswap  /dev/sda2
 ```
 ```
-$ btrfs subvolume create /mnt/@
-$ btrfs subvolume create /mnt/@home
-$ btrfs subvolume create /mnt/@var
-$ btrfs subvolume create /mnt/@snapshots
+swapon /dev/sda2
+```
+```
+mkfs.btrfs /dev/sda3
+```
+```
+mount /dev/sda3 /mnt
+```
+```
+$ btrfs su cr /mnt/@
+$ btrfs su cr /mnt/@home
+$ btrfs su cr /mnt/@var
+$ btrfs su cr /mnt/@snapshots
 ```
 ```
 $ umount /mnt
 ```
 ```
-$ mount -o noatime,compress=lzo,space_cache,subvol=@ /dev/vda3 /mnt
+$ mount -o noatime,compress=lzo,space_cache,subvol=@ /dev/sda3 /mnt
 $ mkdir -p /mnt/{boot/efi,home,var,.snapshots}
-$ mount -o noatime,compress=lzo,space_cache,subvol=@home /dev/vda3 $ /mnt/home
-$ mount -o noatime,compress=lzo,space_cache,subvol=@var /dev/vda3 /mnt/var
-$ mount -o noatime,compress=lzo,space_cache,subvol=@snapshots /dev/vda3 /mnt/.snapshots
-$ mount /dev/vda1 /mnt/boot/efi
+$ mount -o noatime,compress=lzo,space_cache,subvol=@home /dev/sda3 $ /mnt/home
+$ mount -o noatime,compress=lzo,space_cache,subvol=@var /dev/sda3 /mnt/var
+$ mount -o noatime,compress=lzo,space_cache,subvol=@snapshots /dev/sda3 /mnt/.snapshots
+$ mount /dev/sda1 /mnt/boot
 ```
 #### 3. INSTALANDO ARQUIVOS BÁSICOS
 ```
@@ -56,7 +62,7 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 ```
 arch-chroot /mnt
 ```
-#### 6. CONFIGURANDO ARQUIVO DE SWAP
+#### . CONFIGURANDO ARQUIVO DE SWAP
 ```
 fallocate -l 4G /swapfile
 ```
@@ -102,8 +108,9 @@ echo NOMEDAMAQUINA > /etc/hostname
 nano /etc/hosts
 ```
 ```
-
-echo -e ¨127.0.0.1 localhost.localdomain localhost \n::1 localhost.localdomain localhost \n127.0.1.1 NOMEDAMAQUINA.localdomain NOMEDAMAQUINA¨ > /etc/hosts
+127.0.0.1	localhost
+::1		localhost
+127.0.1.1	myhostname.localdomain	myhostname
 ```
 #### 10. CONFIGURANDO O RAID
 Gerar Arquivo /etc/mdadm.conf
