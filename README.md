@@ -53,31 +53,16 @@ $ mount -o noatime,compress=lzo,space_cache,subvol=@ /dev/sda3 /mnt
 $ mkdir -p /mnt/{boot/efi,home,var,.snapshots}
 ```
 ```
-$ mount -o noatime,compress=lzo,space_cache,subvol=@home /dev/sda3 $ /mnt/home
+$ mount -o noatime,compress=lzo,space_cache=v2,subvol=@home /dev/sda3 $ /mnt/home
 ```
 ```
-$ mount -o noatime,compress=lzo,space_cache,subvol=@var /dev/sda3 /mnt/var
+$ mount -o noatime,compress=lzo,space_cache=v2,subvol=@var /dev/sda3 /mnt/var
 ```
 ```
-$ mount -o noatime,compress=lzo,space_cache,subvol=@snapshots /dev/sda3 /mnt/.snapshots
+$ mount -o noatime,compress=lzo,space_cache=v2,subvol=@snapshots /dev/sda3 /mnt/.snapshots
 ```
-
-Create subvolume for root, home, var and one for snapshots
-
-btrfs subvolume create /mnt/@root
-btrfs subvolume create /mnt/@var
-btrfs subvolume create /mnt/@home
-btrfs subvolume create /mnt/@snapshots
-
-Mount them.
-umount /mnt
-mount -o noatime,compress=lzo,space_cache,subvol=@root /dev/sda2 /mnt
-mkdir /mnt/{boot,var,home,.snapshots}
-mount -o noatime,compress=lzo,space_cache,subvol=@var /dev/sda2 /mnt/var
-mount -o noatime,compress=lzo,space_cache,subvol=@home /dev/sda2 /mnt/home
-mount -o noatime,compress=lzo,space_cache,subvol=@snapshots /dev/sda2 /mnt/.snapshots
-
-
+```
+$ moount /dev/sda1 /mnt/boot
 ```
 #### 3. INSTALANDO ARQUIVOS BÁSICOS
 ```
@@ -120,7 +105,7 @@ hwclock --systohc
 
 #### 9. CONFIGURANDO A REDE
 ```
-echo NOMEDAMAQUINA > /etc/hostname
+echo ArchLinux > /etc/hostname
 ```
 ```
 nano /etc/hosts
@@ -128,22 +113,16 @@ nano /etc/hosts
 ```
 127.0.0.1	localhost
 ::1		localhost
-127.0.1.1	myhostname.localdomain	myhostname
+127.0.1.1	ArchLinux.localdomain	ArchLinux
 ```
-#### 10. CONFIGURANDO O RAID
-Gerar Arquivo /etc/mdadm.conf
 ```
-mdadm --examine --scan > /etc/mdadm.conf
+#### 10. CONFIGURANDO O MKINITCPIO
+
 ```
 ```
 nano /etc/mkinitcpio.conf
 ```
-```
-Colocar em HOOKS    o comando mdadm_udev antes do comando filesystems
-Colocar em BINARIES o comando /sbin/mdmon
-```
-```
-mkinitcpio -p linux
+
 ```
 
 #### 11. CONFIGURANDO A INTERNET
