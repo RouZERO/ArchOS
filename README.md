@@ -31,6 +31,8 @@ mkfs.btrfs /dev/sda3
 ```
 mount /dev/sda3 /mnt
 ```
+#### Criando os subvolumes BTRFS
+
 ```
 $ btrfs su cr /mnt/@
 ```
@@ -38,7 +40,7 @@ $ btrfs su cr /mnt/@
 $ btrfs su cr /mnt/@home
 ```
 ```
-$ btrfs su cr /mnt/@var
+$ btrfs su cr /mnt/@var_log
 ```
 ```
 $ btrfs su cr /mnt/@snapshots
@@ -46,17 +48,19 @@ $ btrfs su cr /mnt/@snapshots
 ```
 $ umount /mnt
 ```
+#### Montando diretórios
+
 ```
 $ mount -o noatime,compress=lzo,space_cache,subvol=@ /dev/sda3 /mnt
 ```
 ```
-$ mkdir -p /mnt/{boot/efi,home,var,.snapshots}
+$ mkdir -p /mnt/{boot,home,var_log,.snapshots}
 ```
 ```
 $ mount -o noatime,compress=lzo,space_cache=v2,subvol=@home /dev/sda3 $ /mnt/home
 ```
 ```
-$ mount -o noatime,compress=lzo,space_cache=v2,subvol=@var /dev/sda3 /mnt/var
+$ mount -o noatime,compress=lzo,space_cache=v2,subvol=@var_log /dev/sda3 /mnt/var_log
 ```
 ```
 $ mount -o noatime,compress=lzo,space_cache=v2,subvol=@snapshots /dev/sda3 /mnt/.snapshots
@@ -66,7 +70,7 @@ $ moount /dev/sda1 /mnt/boot
 ```
 #### 3. INSTALANDO ARQUIVOS BÁSICOS
 ```
-pacstrap /mnt base linux linux-headers linux-firmware snapper nano
+pacstrap /mnt base linux linux-headers linux-firmware snapper nano amd-ucode
 ```
 # CONFIGURANDO O SISTEMA
 
@@ -122,6 +126,9 @@ nano /etc/hosts
 ```
 nano /etc/mkinitcpio.conf
 ```
+Adicionar btrfs no modulos
+
+mkinitcpio -p linux
 
 ```
 
@@ -138,7 +145,7 @@ passwd
 ```
 #### 13. ADICIONANDO NOVO USUÁRIO
 ```
-useradd -m -g users -G storage,power,wheel,audio,video -s /bin/bash NOVOUSUARIO
+useradd -mG wheel NOVOUSUARIO
 passwd NOVOUSUARIO
 ```
 #### 14. PACOTES 32bits
@@ -162,16 +169,10 @@ seuusuário   ALL=(ALL) ALL
 ```
 #### 16. CONFIGURANDO OS ARQUIVOS DE BOOT
 ```
-pacman -S grub efibootmgr
+pacman -S grub efibootmgr mtools dosfstools xdg-user-dirs
 ```
 ```
-mkdir /boot/efi
-```
-```
-mount /dev/sda1 /boot/efi
-```
-```
-grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi --recheck
+grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot
 ```
 ```
 grub-mkconfig -o /boot/grub/grub.cfg
