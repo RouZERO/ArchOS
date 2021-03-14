@@ -62,12 +62,14 @@ $ mount -o noatime,compress=lzo,space_cache,subvol=@var /dev/sda3 /mnt/var
 $ mount -o noatime,compress=lzo,space_cache,subvol=@snapshots /dev/sda3 /mnt/.snapshots
 ```
 
-2. Create subvolume for root, home, var and one for snapshots
+Create subvolume for root, home, var and one for snapshots
+
 btrfs subvolume create /mnt/@root
 btrfs subvolume create /mnt/@var
 btrfs subvolume create /mnt/@home
 btrfs subvolume create /mnt/@snapshots
-3. Mount them.
+
+Mount them.
 umount /mnt
 mount -o noatime,compress=lzo,space_cache,subvol=@root /dev/sda2 /mnt
 mkdir /mnt/{boot,var,home,.snapshots}
