@@ -33,8 +33,14 @@ mount /dev/sda3 /mnt
 ```
 ```
 $ btrfs su cr /mnt/@
+```
+```
 $ btrfs su cr /mnt/@home
+```
+```
 $ btrfs su cr /mnt/@var
+```
+```
 $ btrfs su cr /mnt/@snapshots
 ```
 ```
@@ -42,11 +48,19 @@ $ umount /mnt
 ```
 ```
 $ mount -o noatime,compress=lzo,space_cache,subvol=@ /dev/sda3 /mnt
+```
+```
 $ mkdir -p /mnt/{boot/efi,home,var,.snapshots}
+```
+```
 $ mount -o noatime,compress=lzo,space_cache,subvol=@home /dev/sda3 $ /mnt/home
+```
+```
 $ mount -o noatime,compress=lzo,space_cache,subvol=@var /dev/sda3 /mnt/var
+```
+```
 $ mount -o noatime,compress=lzo,space_cache,subvol=@snapshots /dev/sda3 /mnt/.snapshots
-$ mount /dev/sda1 /mnt/boot
+```
 ```
 #### 3. INSTALANDO ARQUIVOS BÁSICOS
 ```
@@ -61,19 +75,6 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 #### 5. ENTRADO NO SISTEMA COMO ADMINISTRADOR 
 ```
 arch-chroot /mnt
-```
-#### . CONFIGURANDO ARQUIVO DE SWAP
-```
-fallocate -l 4G /swapfile
-```
-```
-chmod 600 /swapfile
-```
-```
-mkswap /swapfile
-```
-```
-swapon /swapfile
 ```
 #### 7. CONFIGURANDO LINGUAGEM
 Configurando o Arquvo Locale.gen
