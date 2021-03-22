@@ -22,21 +22,21 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager
 systemctl enable bluetooth
-systemctl enable cups
-systemctl enable sshd
+#systemctl enable cups
+#systemctl enable sshd
 systemctl enable avahi-daemon
 systemctl enable tlp
 systemctl enable reflector.timer
 systemctl enable fstrim.timer
 systemctl enable libvirtd
 systemctl enable firewalld
-systemctl enable acpid
+#systemctl enable acpid
 
 useradd -m rouzero
 echo rouzero:password | chpasswd
 usermod -aG libvirt rouzero
 
-echo "ermanno ALL=(ALL) ALL" >> /etc/sudoers.d/rouzero
+echo "rouzero ALL=(ALL) ALL" >> /etc/sudoers.d/rouzero
 
 
 /bin/echo -e "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
