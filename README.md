@@ -40,9 +40,6 @@ $ btrfs su cr /mnt/@
 $ btrfs su cr /mnt/@home
 ```
 ```
-$ btrfs su cr /mnt/@var_log
-```
-```
 $ btrfs su cr /mnt/@snapshots
 ```
 ```
@@ -54,13 +51,10 @@ $ umount /mnt
 $ mount -o noatime,compress=lzo,space_cache,subvol=@ /dev/sda3 /mnt
 ```
 ```
-$ mkdir -p /mnt/{boot,home,var_log,.snapshots}
+$ mkdir -p /mnt/{boot,home,.snapshots}
 ```
 ```
 $ mount -o noatime,compress=lzo,space_cache=v2,subvol=@home /dev/sda3 $ /mnt/home
-```
-```
-$ mount -o noatime,compress=lzo,space_cache=v2,subvol=@var_log /dev/sda3 /mnt/var_log
 ```
 ```
 $ mount -o noatime,compress=lzo,space_cache=v2,subvol=@snapshots /dev/sda3 /mnt/.snapshots
