@@ -1,4 +1,4 @@
-# Arch Linux UEFI + RAID
+# Arch Linux
 
 #### 1. PERPARANDO O DISCO
 ```
