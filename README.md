@@ -43,21 +43,27 @@ $ btrfs su cr /mnt/@home
 $ btrfs su cr /mnt/@snapshots
 ```
 ```
+$ btrfs su cr /mnt/@var_log
+```
+```
 $ umount /mnt
 ```
 #### Montando diretórios
 
 ```
-$ mount -o noatime,compress=lzo,space_cache,subvol=@ /dev/sda3 /mnt
+$ mount -o noatime,compress=lzo,space_cache,subvol=@ /dev/sd[]3 /mnt
 ```
 ```
 $ mkdir -p /mnt/{boot,home,.snapshots}
 ```
 ```
-$ mount -o noatime,compress=lzo,space_cache=v2,subvol=@home /dev/sda3 $ /mnt/home
+$ mount -o noatime,compress=lzo,space_cache=v2,subvol=@home /dev/sd[]3 /mnt/home
 ```
 ```
-$ mount -o noatime,compress=lzo,space_cache=v2,subvol=@snapshots /dev/sda3 /mnt/.snapshots
+$ mount -o noatime,compress=lzo,space_cache=v2,subvol=@snapshots /dev/sd[]3 /mnt/.snapshots
+```
+```
+$ mount -o noatime,compress=lzo,space_cache=v2,subvol=@var_log /dev/sd[]3 /mnt/var/log
 ```
 ```
 $ moount /dev/sd[]1 /mnt/boot
