@@ -89,7 +89,9 @@ cd ArchOS
 ```
 chmod +x ./install_uefi.sh
 ```
-
+```
+ ./install_uefi.sh
+```
 #### 10. CONFIGURANDO O MKINITCPIO
 
 ```
