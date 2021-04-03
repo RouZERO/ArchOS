@@ -5,31 +5,31 @@
 lsblk
 ```
 ```
-cfdisk /dev/sda
+cfdisk /dev/sd[]
 ```
 Escolher GPT Seguir Tabela Abaixo
 ```
-EFI        = sda1      = 512M
-SWAP       = sda2      = 2G
-SISTEMA    = sda3      = Restante
+EFI        = sd[]1      = 512M
+SWAP       = sd[]2      = 2G
+SISTEMA    = sd[]3      = Restante
 ```
 #### 2. CONFIGURANDO O FORMATO DAS PARTIÇÕES
 
 Transformando as Partições
 ```
-mkfs.fat -F32 /dev/sda1
+mkfs.fat -F32 /dev/sd[]1
 ```
 ```
-mkswap  /dev/sda2
+mkswap  /dev/sd[]2
 ```
 ```
-swapon /dev/sda2
+swapon /dev/sd[]2
 ```
 ```
-mkfs.btrfs /dev/sda3
+mkfs.btrfs /dev/sd[]3
 ```
 ```
-mount /dev/sda3 /mnt
+mount /dev/sd[]3 /mnt
 ```
 #### Criando os subvolumes BTRFS
 
@@ -60,7 +60,7 @@ $ mount -o noatime,compress=lzo,space_cache=v2,subvol=@home /dev/sda3 $ /mnt/hom
 $ mount -o noatime,compress=lzo,space_cache=v2,subvol=@snapshots /dev/sda3 /mnt/.snapshots
 ```
 ```
-$ moount /dev/sda1 /mnt/boot
+$ moount /dev/sd[]1 /mnt/boot
 ```
 #### 3. INSTALANDO ARQUIVOS BÁSICOS
 ```
