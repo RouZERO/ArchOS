@@ -113,6 +113,17 @@ Descomentar
 ```
 pacman -Sy
 ```
+#### Criando senhas
+
+Criar senha root
+```
+passwd
+```
+Criar senha Usuário
+
+```
+passws [Usuário]
+```
 
 #### DESMONTE AS PARTIÇÕES E REINICIE
 ```
