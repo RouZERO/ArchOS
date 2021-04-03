@@ -93,14 +93,15 @@ chmod +x ./install_uefi.sh
 #### 10. CONFIGURANDO O MKINITCPIO
 
 ```
-```
 nano /etc/mkinitcpio.conf
 ```
-Adicionar btrfs no modulos
-
-mkinitcpio -p linux
-
 ```
+Adicionar btrfs no modulos
+```
+```
+mkinitcpio -p linux
+```
+
 #### 14. PACOTES 32bits
 ```
 nano /etc/pacman.conf
