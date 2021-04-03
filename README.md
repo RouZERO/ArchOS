@@ -76,44 +76,13 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 ```
 arch-chroot /mnt
 ```
-#### 7. CONFIGURANDO LINGUAGEM
-Configurando o Arquvo Locale.gen
-```
-nano /etc/locale.gen
-```
-Procurar e Descomentar
-```
-pt_BR UTF-8 UTF-8
-```
-Configurando o Arquivo Locale.conf
-```
-echo LANG=pt_BR.UTF-8 > /etc/locale.conf
-```
-Finalizando a Configuração da Linguagem
-```
-locale-gen
-```
-#### 8. CONFIGURANDO O FUSO HORÁRIO
-```
-ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
-```
-```
-hwclock --systohc
-```
+#### 7. GIT nesse Repo
 
-#### 9. CONFIGURANDO A REDE
-```
-echo ArchLinux > /etc/hostname
-```
-```
-nano /etc/hosts
-```
-```
-127.0.0.1	localhost
-::1		localhost
-127.0.1.1	ArchLinux.localdomain	ArchLinux
-```
-```
+cd tmp
+git clone https://github.com/RouZERO/ArchOS/
+cd ArchOS
+chmod +x ./install_uefi.sh
+
 #### 10. CONFIGURANDO O MKINITCPIO
 
 ```
@@ -124,23 +93,6 @@ Adicionar btrfs no modulos
 
 mkinitcpio -p linux
 
-```
-
-#### 11. CONFIGURANDO A INTERNET
-```
-pacman -S wireless_tools networkmanager
-```
-```
-systemctl enable NetworkManager
-```
-#### 12. COLOCANDO SENHA PARA O ADMINISTRADOR
-```
-passwd
-```
-#### 13. ADICIONANDO NOVO USUÁRIO
-```
-useradd -mG wheel NOVOUSUARIO
-passwd NOVOUSUARIO
 ```
 #### 14. PACOTES 32bits
 ```
@@ -154,13 +106,6 @@ Descomentar
 pacman -Sy
 ```
 
-#### 15. HABILITANDO SUDO
-```
-nano /etc/sudoers
-```
-```
-seuusuário   ALL=(ALL) ALL
-```
 #### 16. CONFIGURANDO OS ARQUIVOS DE BOOT
 ```
 pacman -S grub efibootmgr mtools dosfstools xdg-user-dirs
