@@ -77,11 +77,18 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ```
 #### 7. GIT nesse Repo
-
+```
 cd tmp
+```
+```
 git clone https://github.com/RouZERO/ArchOS/
+```
+```
 cd ArchOS
+```
+```
 chmod +x ./install_uefi.sh
+```
 
 #### 10. CONFIGURANDO O MKINITCPIO
 
@@ -104,17 +111,6 @@ Descomentar
 ```
 ```
 pacman -Sy
-```
-
-#### 16. CONFIGURANDO OS ARQUIVOS DE BOOT
-```
-pacman -S grub efibootmgr mtools dosfstools xdg-user-dirs
-```
-```
-grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot
-```
-```
-grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 #### DESMONTE AS PARTIÇÕES E REINICIE
