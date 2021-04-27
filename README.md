@@ -143,3 +143,10 @@ umount -R /mnt
 ```
 reboot
 ```
+Remover botoes
+gsettings set org.gnome.desktop.wm.preferences button-layout :
+
+reset
+gsettings reset org.gnome.desktop.wm.preferences button-layout
+
+
