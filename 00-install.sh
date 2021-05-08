@@ -10,6 +10,7 @@ echo "ArchLinux" >> /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 ArchLinux.localdomain ArchLinux" >> /etc/hosts
+echo root:password | chpasswd
 
 pacman -S --noconfirm grub grub-btrfs efibootmgr networkmanager dialog wpa_supplicant reflector xdg-user-dirs-gtk xdg-utils bluez bluez-utilsbash-completion flatpak os-prober ntfs-3g xf86-video-amdgpu
 
@@ -24,6 +25,7 @@ systemctl enable reflector.timer
 systemctl enable fstrim.timer
 
 useradd -m rouzero
+echo ermanno:password | chpasswd
 usermod -aG libvirt rouzero
 
 echo "rouzero ALL=(ALL) ALL" >> /etc/sudoers.d/rouzero
