@@ -11,9 +11,7 @@ echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 ArchLinux.localdomain ArchLinux" >> /etc/hosts
 
-pacman -S --noconfirm grub grub-btrfs efibootmgr networkmanager network-manager-applet dialog wpa_supplicant reflector xdg-user-dirs xdg-utils bluez bluez-utilsbash-completion virt-manager qemu qemu-arch-extra ovmf firewalld flatpak os-prober ntfs-3g snap-pac 
-
-pacman -S --noconfirm xf86-video-amdgpu
+pacman -S --noconfirm grub grub-btrfs efibootmgr networkmanager dialog wpa_supplicant reflector xdg-user-dirs-gtk xdg-utils bluez bluez-utilsbash-completion flatpak os-prober ntfs-3g xf86-video-amdgpu
 
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
