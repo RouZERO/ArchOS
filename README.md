@@ -143,10 +143,12 @@ umount -R /mnt
 ```
 reboot
 ```
-Remover botoes
-gsettings set org.gnome.desktop.wm.preferences button-layout :
+```
+#### USANDO DO AUR
 
-reset
-gsettings reset org.gnome.desktop.wm.preferences button-layout
+Ananicy - is Another auto nice daemon, with community rules support
+https://aur.archlinux.org/packages/ananicy-git
 
-
+Automatically setup swap on zram
+https://aur.archlinux.org/packages/zramd/
+```
