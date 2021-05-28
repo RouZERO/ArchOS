@@ -8,7 +8,12 @@ set -e
 #
 ##################################################################################################################
 
-package="gnome-shell-extension-dash-to-panel-git gnome-shell-extension-gsconnect-git gnome-shell-extension-gtktitlebar-git gnome-shell-extension-pop-shell-git gnome-shell-extension-appindicator-git gnome-shell-extension-bluetooth-quick-connect-git gnome-shell-extension-blur-my-shell-git"
+cd /tmp
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+package="pamac-all gnome-shell-extension-dash-to-panel-git gnome-shell-extension-gsconnect-git gnome-shell-extension-gtktitlebar-git gnome-shell-extension-pop-shell-git gnome-shell-extension-appindicator-git gnome-shell-extension-bluetooth-quick-connect-git gnome-shell-extension-blur-my-shell-git"
 
 #----------------------------------------------------------------------------------
 
