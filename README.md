@@ -10,7 +10,6 @@ cfdisk /dev/sd[]
 Escolher GPT Seguir Tabela Abaixo
 ```
 EFI        = sd[]1      = 512M
-SWAP       = sd[]2      = 2G
 SISTEMA    = sd[]3      = Restante
 ```
 #### 2. CONFIGURANDO O FORMATO DAS PARTIÇÕES
@@ -18,12 +17,6 @@ SISTEMA    = sd[]3      = Restante
 Transformando as Partições
 ```
 mkfs.fat -F32 /dev/sd[]1
-```
-```
-mkswap  /dev/sd[]2
-```
-```
-swapon /dev/sd[]2
 ```
 ```
 mkfs.btrfs /dev/sd[]3
@@ -70,7 +63,7 @@ $ moount /dev/sd[]1 /mnt/boot
 ```
 #### 3. INSTALANDO ARQUIVOS BÁSICOS
 ```
-pacstrap /mnt base linux linux-headers linux-firmware snapper nano amd-ucode
+pacstrap /mnt base linux-lts linux-lts-headers linux-firmware snapper nano amd-ucode
 ```
 # CONFIGURANDO O SISTEMA
 
