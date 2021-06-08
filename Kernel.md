@@ -9,7 +9,7 @@ Instalar o modprobed-db para minimizar o tempo de compilação
 $ modprobed-deb store
 ```
 ```
-$yay --editmenu -S linux-xanmod-cacule linux-xanmod-cacule-headers
+$ yay --editmenu -S linux-xanmod-cacule linux-xanmod-cacule-headers
 ```
 ### Editar com o nano
 
