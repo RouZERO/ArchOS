@@ -1,16 +1,17 @@
-Kernel
+# Kernel
 
-Kernel LTS
+#### Kernel LTS
 
-Kernel xanmod LTS
+#### Kernel xanmod LTS
 
 Instalar o modprobed-db para minimizar o tempo de compilação
-
+```
 $ modprobed-deb store
-
+```
+```
 $yay --editmenu -S linux-xanmod-cacule linux-xanmod-cacule-headers
-
-Editar com o nano
+```
+### Editar com o nano
 
 _microarchitecture=99
 use_numa=n 
