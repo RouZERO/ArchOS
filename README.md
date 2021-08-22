@@ -10,7 +10,7 @@ cfdisk /dev/sd[]
 Escolher GPT Seguir Tabela Abaixo
 ```
 EFI        = sd[]1      = 512M
-SISTEMA    = sd[]3      = Restante
+SISTEMA    = sd[]2      = Restante
 ```
 #### 2. CONFIGURANDO O FORMATO DAS PARTIÇÕES
 
@@ -123,7 +123,7 @@ passwd
 Criar senha Usuário
 
 ```
-passws [Usuário]
+passwsd [Usuário]
 ```
 
 #### DESMONTE AS PARTIÇÕES E REINICIE
