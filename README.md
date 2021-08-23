@@ -24,46 +24,10 @@ mkfs.btrfs /dev/sd[]3
 ```
 mount /dev/sd[]3 /mnt
 ```
-#### Criando os subvolumes BTRFS
-
-```
-$ btrfs su cr /mnt/@
-```
-```
-$ btrfs su cr /mnt/@home
-```
-```
-$ btrfs su cr /mnt/@snapshots
-```
-```
-$ btrfs su cr /mnt/@var_log
-```
-```
-$ umount /mnt
-```
-#### Montando diretórios
-
-```
-$ mount -o noatime,compress=lzo,space_cache,subvol=@ /dev/sd[]3 /mnt
-```
-```
-$ mkdir -p /mnt/{boot,home,.snapshots}
-```
-```
-$ mount -o noatime,compress=lzo,space_cache=v2,subvol=@home /dev/sd[]3 /mnt/home
-```
-```
-$ mount -o noatime,compress=lzo,space_cache=v2,subvol=@snapshots /dev/sd[]3 /mnt/.snapshots
-```
-```
-$ mount -o noatime,compress=lzo,space_cache=v2,subvol=@var_log /dev/sd[]3 /mnt/var/log
-```
-```
-$ moount /dev/sd[]1 /mnt/boot
 ```
 #### 3. INSTALANDO ARQUIVOS BÁSICOS
 ```
-pacstrap /mnt base linux-lts linux-lts-headers linux-firmware snapper nano amd-ucode
+pacstrap /mnt base linux-firmware nano amd-ucode
 ```
 # CONFIGURANDO O SISTEMA
 
@@ -91,18 +55,6 @@ chmod +x ./install_uefi.sh
 ```
  ./install_uefi.sh
 ```
-#### 10. CONFIGURANDO O MKINITCPIO
-
-```
-nano /etc/mkinitcpio.conf
-```
-```
-Adicionar btrfs no modulos
-```
-```
-mkinitcpio -p linux
-```
-
 #### 14. PACOTES 32bits
 ```
 nano /etc/pacman.conf
@@ -114,18 +66,6 @@ Descomentar
 ```
 pacman -Sy
 ```
-#### Criando senhas
-
-Criar senha root
-```
-passwd
-```
-Criar senha Usuário
-
-```
-passwsd [Usuário]
-```
-
 #### DESMONTE AS PARTIÇÕES E REINICIE
 ```
 exit
