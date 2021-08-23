@@ -1,14 +1,12 @@
 #!/bin/bash
 set -e
-# Author	:	Erik Dubois
-# Modicificacão :       Rodrigo Alan M. Carvalho
+# Author	:	 Rodrigo Alan M. Carvalho
 
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc
 echo "pt_BR.UTF-8 UTF-8"  >> /etc/locale.gen
 locale-gen
 echo "LANG=pt_BR.UTF-8" >> /etc/locale.conf
-# echo "KEYMAP=de_CH-latin1" >> /etc/vconsole.conf
 echo "ArchLinux" >> /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
@@ -22,9 +20,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager
 systemctl enable bluetooth
-# systemctl enable avahi-daemon
-# systemctl enable tlp
-systemctl enable reflector.timer
 systemctl enable fstrim.timer
 
 useradd -m rouzero
