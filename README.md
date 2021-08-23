@@ -45,9 +45,9 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 ```
 arch-chroot /mnt
 ```
-#### 7. GIT nesse Repo
+#### 7. USANDO ESSE REPOSITÓRIO
 ```
-cd tmp
+cd /tmp
 ```
 ```
 git clone https://github.com/RouZERO/ArchOS/
@@ -56,10 +56,10 @@ git clone https://github.com/RouZERO/ArchOS/
 cd ArchOS
 ```
 ```
-chmod +x ./install_uefi.sh
+chmod +x ./00-base.sh
 ```
 ```
- ./install_uefi.sh
+ ./00-base.sh
 ```
 #### 14. PACOTES 32bits
 ```
