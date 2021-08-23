@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
-# Author	      :	      Erik Dubois
-# Modicificacão :       Rodrigo Alan M. Carvalho
+# Author	      :       Rodrigo Alan M. Carvalho
 
 
 sudo pacman -S sddm plasma kde-applications --noconfirm --needed
