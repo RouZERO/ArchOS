@@ -1,4 +1,7 @@
 #!/bin/bash
+set -e
+# Author	:	Erik Dubois
+# Modicificacão :       Rodrigo Alan M. Carvalho
 
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc
