@@ -3,7 +3,7 @@ set -e
 # Author	      :       Rodrigo Alan M. Carvalho
 
 
-sudo pacman -S sddm plasma kde-applications --noconfirm --needed
+sudo pacman -S sddm plasma ark kdeconnect  --noconfirm --needed
 sudo systemctl enable sddm
 
 
