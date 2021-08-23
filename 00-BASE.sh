@@ -11,7 +11,7 @@ echo "ArchLinux" >> /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 ArchLinux.localdomain ArchLinux" >> /etc/hosts
-echo root:password | chpasswd
+# echo root:password | chpasswd
 
 pacman -S --noconfirm grub efibootmgr networkmanager wpa_supplicant xdg-user-dirs xdg-utils bluez flatpak os-prober ntfs-3g
 
