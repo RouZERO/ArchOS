@@ -19,11 +19,10 @@ Transformando as Partições
 mkfs.fat -F32 /dev/sd[]1
 ```
 ```
-mkfs.btrfs /dev/sd[]3
+mkfs.ext4 /dev/sd[]2
 ```
 ```
-mount /dev/sd[]3 /mnt
-```
+mount /dev/sd[]2 /mnt
 ```
 #### 3. INSTALANDO ARQUIVOS BÁSICOS
 ```
