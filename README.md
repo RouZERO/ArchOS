@@ -24,12 +24,19 @@ mkfs.ext4 /dev/sd[]2
 ```
 mount /dev/sd[]2 /mnt
 ```
+```
+mkdir /mnt/boot
+```
+```
+mkdir /mnt/boot/efi
+```
+```
+mount /dev/sd[]1 /mnt/boot/efi
+```
 #### 3. INSTALANDO ARQUIVOS BÁSICOS
 ```
-pacstrap /mnt base linux-firmware nano amd-ucode
+pacstrap /mnt base base-devel git linux-zen linux-firmware nano amd-ucode
 ```
-# CONFIGURANDO O SISTEMA
-
 #### 4. CONFIGURANDO FSTAB  
 ```
 genfstab -U -p /mnt >> /mnt/etc/fstab
