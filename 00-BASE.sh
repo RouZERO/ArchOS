@@ -23,6 +23,7 @@ systemctl enable bluetooth
 systemctl enable fstrim.timer
 
 useradd -m rouzero
+# Para alterar a senha altere onde esta passsword
 echo rouzero:password | chpasswd
 
 echo "rouzero ALL=(ALL) ALL" >> /etc/sudoers.d/rouzero
