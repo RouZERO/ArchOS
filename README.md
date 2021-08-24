@@ -60,8 +60,8 @@ Descomentar
 pacman -Sy
 ```
 #### 10. USANDO ESSE REPOSITÓRIO
-```
 Entrando na pasta tmp.
+```
 cd /tmp
 ```
 Baixando o repertório.
