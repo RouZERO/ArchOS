@@ -13,7 +13,7 @@ echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 ArchLinux.localdomain ArchLinux" >> /etc/hosts
 # echo root:password | chpasswd
 
-pacman -S --noconfirm grub efibootmgr networkmanager wpa_supplicant xdg-user-dirs xdg-utils bluez flatpak os-prober ntfs-3g
+pacman -S --noconfirm grub efibootmgr networkmanager wpa_supplicant xdg-user-dirs xdg-utils bluez flatpak os-prober ntfs-3g pipewire pipewire-{alsa,jack,media-session,pulse}
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
