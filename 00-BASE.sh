@@ -29,4 +29,4 @@ echo rouzero:password | chpasswd
 echo "rouzero ALL=(ALL) ALL" >> /etc/sudoers.d/rouzero
 
 
-/bin/echo -e "\e[1;32mEtapa Finalizada! Agora Instale o Som\e[0m"
+/bin/echo -e "\e[1;32mEtapa Finalizada! Agora Instale um Desktop Environment \e[0m"
