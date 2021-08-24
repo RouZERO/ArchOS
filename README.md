@@ -76,6 +76,10 @@ Alterando as permissões dos arquivos.
 ```
 chmod +x ./00-base.sh
 ```
+Mudar a senha do Usuário.
+```
+nano ./00-base.sh
+```
 Executando o Script
 ```
  ./00-base.sh
