@@ -30,7 +30,3 @@ echo "rouzero ALL=(ALL) ALL" >> /etc/sudoers.d/rouzero
 
 
 /bin/echo -e "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
-
-
-
-
