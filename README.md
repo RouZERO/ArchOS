@@ -14,8 +14,6 @@ SISTEMA    = sd[]2      = Restante
 ```
 #### 2 - CONFIGURANDO O FORMATO DAS PARTIÇÕES
 
-Transformando as Partições
-
 FAT32 Para Partição do BOOT
 ```
 mkfs.fat -F32 /dev/sd[]1
