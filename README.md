@@ -68,7 +68,7 @@ git clone https://github.com/RouZERO/ArchOS/
 ```
 Entrando na pasta dos arquivos baixandos.
 ```
-cd ArchOS
+cd /ArchOS
 ```
 Alterando as permissões dos arquivos.
 ```
