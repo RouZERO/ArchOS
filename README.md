@@ -61,17 +61,22 @@ pacman -Sy
 ```
 #### 10. USANDO ESSE REPOSITÓRIO
 ```
+Entrando na pasta tmp.
 cd /tmp
 ```
+Baixando o repertório.
 ```
 git clone https://github.com/RouZERO/ArchOS/
 ```
+Entrando na pasta dos arquivos baixandos.
 ```
 cd ArchOS
 ```
+Alterando as permissões dos arquivos.
 ```
 chmod +x ./00-base.sh
 ```
+Executando o Script
 ```
  ./00-base.sh
 ```
