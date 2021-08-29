@@ -74,7 +74,7 @@ Alterando as permissões dos arquivos.
 ```
 chmod +x ./00-base.sh
 ```
-Mudar a senha do Usuário.
+Mudar a senha e nome do root e do Usuário.
 ```
 nano ./00-base.sh
 ```
