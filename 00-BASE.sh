@@ -32,7 +32,8 @@ pacman -S --noconfirm grub efibootmgr networkmanager wpa_supplicant xdg-user-dir
 pacman -S --noconfirm pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-jack
 
 useradd -m rouzero
-# Para alterar o nome altere onde esta rouzero e a senha altere passsword.
+
+# Para alterar o nome de usuário altere onde esta rouzero e a senha altere passsword.
 echo rouzero:password | chpasswd
 echo "rouzero ALL=(ALL) ALL" >> /etc/sudoers.d/rouzero
 
