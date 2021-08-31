@@ -19,7 +19,7 @@ echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 ArchLinux.localdomain ArchLinux" >> /etc/hosts
 
-# Para alterar o nome altere onde esta rouzero e a senha altere passsword.
+# Para alterar a senha do administrador altere onde esta passsword.
 echo root:password | chpasswd
 
 # Arquivos Básicos.
