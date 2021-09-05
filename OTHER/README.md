@@ -20,8 +20,3 @@ https://aur.archlinux.org/packages/modprobed-db/
 xboxdrv - Userspace gamepad driver for Linux
 https://aur.archlinux.org/packages/xboxdrv
 ```
-```
-timeshift - A backup and restore utility
-https://aur.archlinux.org/packages/timeshift-bin
-https://aur.archlinux.org/packages/timeshift-autosnap
-```
