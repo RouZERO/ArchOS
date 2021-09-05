@@ -1,6 +1,9 @@
 #### USANDO DO AUR
 
+```
+Web Manager - Run websites as if they were apps
 https://aur.archlinux.org/packages/webapp-manager/
+```
 ```
 Ananicy - is Another auto nice daemon, with community rules support
 https://aur.archlinux.org/packages/ananicy-git
