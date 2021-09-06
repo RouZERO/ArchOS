@@ -5,6 +5,7 @@ Para checar o nome dos discos.
 ```
 lsblk
 ```
+Iniciando as configurações do disco.
 ```
 cfdisk /dev/sd[]
 ```
