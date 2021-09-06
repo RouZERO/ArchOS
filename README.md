@@ -35,23 +35,23 @@ mkdir /mnt/boot
 ```
 mkdir /mnt/boot/efi
 ```
-#### 5 - MONTANDO DIRETORIO DO BOOT
+Montando Diretorio do Boot.
 ```
 mount /dev/sd[]1 /mnt/boot/efi
 ```
-#### 6. INSTALANDO ARQUIVOS BÁSICOS
+#### 5. INSTALANDO ARQUIVOS BÁSICOS
 ```
 pacstrap /mnt base base-devel git linux-zen linux-firmware nano amd-ucode
 ```
-#### 7. CONFIGURANDO FSTAB  
+#### 6. CONFIGURANDO FSTAB  
 ```
 genfstab -U -p /mnt >> /mnt/etc/fstab
 ```
-#### 8. ENTRADO NO SISTEMA COMO ADMINISTRADOR 
+#### 7. ENTRADO NO SISTEMA COMO ADMINISTRADOR 
 ```
 arch-chroot /mnt
 ```
-#### 9. HABILITANDO PACOTES 32bits
+#### 8. HABILITANDO PACOTES 32bits
 ```
 nano /etc/pacman.conf
 ```
@@ -60,7 +60,7 @@ Descomentar
 [multilib]
 Include = /etc/pacman.d/mirrorlist
 ```
-#### 10. USANDO ESSE REPOSITÓRIO
+#### 9. USANDO ESSE REPOSITÓRIO
 Entrando na pasta tmp.
 ```
 cd /tmp
