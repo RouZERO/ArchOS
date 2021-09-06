@@ -14,7 +14,7 @@ Escolher GPT Seguir Tabela Abaixo
 EFI        = sd[]1      = 512M
 SISTEMA    = sd[]2      = Restante
 ```
-#### 2 - CONFIGURANDO O FORMATO DAS PARTIÇÕES
+Configurando o Formato das Partições.
 
 FAT32 Para Partição do BOOT
 ```
@@ -24,11 +24,11 @@ EXT4 Para Partição Raiz
 ```
 mkfs.ext4 /dev/sd[]2
 ```
-#### 3 - MONTANDO DIRETORIO RAIZ
+#### 2 - MONTANDO DIRETORIO RAIZ
 ```
 mount /dev/sd[]2 /mnt
 ```
-#### 4 - CRIANDO PASTAS DE BOOT
+#### 3 - CRIANDO PASTAS DE BOOT
 ```
 mkdir /mnt/boot
 ```
@@ -39,19 +39,19 @@ Montando Diretorio do Boot.
 ```
 mount /dev/sd[]1 /mnt/boot/efi
 ```
-#### 5. INSTALANDO ARQUIVOS BÁSICOS
+#### 4. INSTALANDO ARQUIVOS BÁSICOS
 ```
 pacstrap /mnt base base-devel git linux-zen linux-firmware nano amd-ucode
 ```
-#### 6. CONFIGURANDO FSTAB  
+#### 5. CONFIGURANDO FSTAB  
 ```
 genfstab -U -p /mnt >> /mnt/etc/fstab
 ```
-#### 7. ENTRADO NO SISTEMA COMO ADMINISTRADOR 
+#### 6. ENTRADO NO SISTEMA COMO ADMINISTRADOR 
 ```
 arch-chroot /mnt
 ```
-#### 8. HABILITANDO PACOTES 32bits
+#### 7. HABILITANDO PACOTES 32bits
 ```
 nano /etc/pacman.conf
 ```
@@ -60,7 +60,7 @@ Descomentar
 [multilib]
 Include = /etc/pacman.d/mirrorlist
 ```
-#### 9. USANDO ESSE REPOSITÓRIO
+#### 8. USANDO ESSE REPOSITÓRIO
 Entrando na pasta tmp.
 ```
 cd /tmp
