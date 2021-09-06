@@ -56,6 +56,8 @@ nano /etc/pacman.conf
 Descomentar
 ```
 [multilib]
+Include = /etc/pacman.d/mirrorlist
+
 ```
 #### 10. USANDO ESSE REPOSITÓRIO
 Entrando na pasta tmp.
