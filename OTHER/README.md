@@ -20,3 +20,7 @@ https://aur.archlinux.org/packages/modprobed-db/
 xboxdrv - Userspace gamepad driver for Linux
 https://aur.archlinux.org/packages/xboxdrv
 ```
+```
+grub-hook - Pacman hook to update GRUB after a kernel update
+https://aur.archlinux.org/packages/grub-hook
+```
