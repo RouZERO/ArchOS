@@ -20,3 +20,7 @@ https://aur.archlinux.org/packages/xboxdrv
 grub-hook - Pacman hook to update GRUB after a kernel update
 https://aur.archlinux.org/packages/grub-hook
 ```
+```
+gtk3-nocsd - A hack to disable gtk+ 3 client side decoration
+https://aur.archlinux.org/packages/gtk3-nocsd-git/
+```
