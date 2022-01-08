@@ -26,10 +26,10 @@ echo root:password | chpasswd
 pacman -S --noconfirm grub efibootmgr networkmanager wpa_supplicant xdg-user-dirs xdg-utils bluez flatpak os-prober ntfs-3g 
 
 # Para usar o Servidor de som Pipeware.
-# pacman -S --noconfirm pipewire pipewire-{alsa,jack,media-session,pulse}
+pacman -S --noconfirm pipewire pipewire-{alsa,jack,media-session,pulse}
 
 # Para usar o Servidor de som Pulseaudio.
-pacman -S --noconfirm pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-jack
+# pacman -S --noconfirm pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-jack
 
 useradd -m rouzero
 
