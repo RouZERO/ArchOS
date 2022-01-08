@@ -1,20 +1,4 @@
-# Arch Linux - Base
-
-#### 1 - PERPARANDO O DISCO
-Para checar o nome dos discos.
-```
-lsblk
-```
-Iniciando as configurações do disco.
-```
-cfdisk /dev/sd[]
-```
-Escolher GPT Seguir Tabela Abaixo
-```
-EFI        = sd[]1      = 512M
-SISTEMA    = sd[]2      = Restante
-```
-Configurando o Formato das Partições.
+#### 2. Configurando o Formato das Partições.
 
 FAT32 Para Partição do BOOT
 ```
