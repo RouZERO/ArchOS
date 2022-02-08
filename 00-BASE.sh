@@ -20,10 +20,10 @@ echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 ArchLinux.localdomain ArchLinux" >> /etc/hosts
 
 # Para alterar a senha do administrador altere onde esta passsword.
-echo root:password | chpasswd
+echo root:03081986 | chpasswd
 
 # Arquivos Básicos.
-pacman -S --noconfirm grub efibootmgr networkmanager wpa_supplicant xdg-user-dirs xdg-utils bluez flatpak os-prober ntfs-3g 
+pacman -S --noconfirm grub efibootmgr networkmanager wpa_supplicant xdg-user-dirs xdg-utils bluez flatpak
 
 # Para usar o Servidor de som Pipeware.
 pacman -S --noconfirm pipewire pipewire-{alsa,jack,media-session,pulse}
@@ -34,7 +34,7 @@ pacman -S --noconfirm pipewire pipewire-{alsa,jack,media-session,pulse}
 useradd -m rouzero
 
 # Para alterar o nome de usuário altere onde esta rouzero e a senha altere passsword.
-echo rouzero:password | chpasswd
+echo rouzero:03081986 | chpasswd
 echo "rouzero ALL=(ALL) ALL" >> /etc/sudoers.d/rouzero
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
