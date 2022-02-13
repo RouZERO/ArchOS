@@ -4,7 +4,7 @@ set -e
 
 
 #sudo pacman -S sddm plasma ark kdeconnect plasma-wayland-session  --noconfirm --needed
-sudo pacman -S --noconfirm sddm plasma plasma-wayland-session powerdevil konsole dolphin ark kate krunner packagekit-qt5 xdg-desktop-portal-kde
+sudo pacman -S --noconfirm sddm plasma plasma-wayland-session powerdevil konsole dolphin ark kate krunner packagekit-qt5 xdg-desktop-portal-kde kaccounts-providers
 
 sudo systemctl enable sddm
 
