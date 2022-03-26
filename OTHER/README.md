@@ -24,3 +24,16 @@ https://aur.archlinux.org/packages/grub-hook
 gtk3-nocsd - A hack to disable gtk+ 3 client side decoration
 https://aur.archlinux.org/packages/gtk3-nocsd-git/
 ```
+COMANDOS USADOS
+```
+```
+yay --sudoloop --save
+```
+```
+TEMA USADO
+```
+```
+Breeze AlphaBlack
+https://store.kde.org/p/1084931/
+```
+```
