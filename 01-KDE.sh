@@ -2,9 +2,7 @@
 set -e
 # Author	      :       Rodrigo Alan M. Carvalho
 
-
-#sudo pacman -S sddm plasma ark kdeconnect plasma-wayland-session  --noconfirm --needed
-sudo pacman -S --noconfirm sddm plasma plasma-wayland-session powerdevil konsole dolphin ark kate krunner packagekit-qt5 kaccounts-providers
+sudo pacman -S --noconfirm sddm plasma plasma-wayland-session powerdevil konsole dolphin ark kdeconnect kate krunner packagekit-qt5 kaccounts-providers
 
 sudo systemctl enable sddm
 
