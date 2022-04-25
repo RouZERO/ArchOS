@@ -23,7 +23,7 @@ echo "127.0.1.1 ArchLinux.localdomain ArchLinux" >> /etc/hosts
 echo root:03081986 | chpasswd
 
 # Arquivos Básicos.
-pacman -S --noconfirm grub efibootmgr networkmanager wpa_supplicant xdg-user-dirs xdg-utils bluez flatpak
+pacman -S --noconfirm grub efibootmgr networkmanager wpa_supplicant xdg-user-dirs xdg-utils xdg-desktop-portal-kde xdg-desktop-portal-gnome bluez flatpak
 
 # Para usar o Servidor de som Pipeware.
 pacman -S --noconfirm pipewire pipewire-{alsa,jack,media-session,pulse}
